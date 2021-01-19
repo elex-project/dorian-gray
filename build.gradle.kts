@@ -6,8 +6,8 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.0-SNAPSHOT"
-description = ""
+version = "1.0.0"
+description = "Image filters"
 
 repositories {
 	maven {
@@ -32,12 +32,12 @@ configurations {
 }
 
 tasks.jar {
-	manifest { // todo
+	manifest {
 		attributes(mapOf(
 				"Implementation-Title" to project.name,
 				"Implementation-Version" to project.version,
 				"Implementation-Vendor" to "ELEX co.,pte.",
-				"Automatic-Module-Name" to "com.elex_project.${project.name}"
+				"Automatic-Module-Name" to "com.elex_project.dorian_gray"
 		))
 	}
 }
@@ -69,20 +69,16 @@ publishing {
 		create<MavenPublication>("mavenJava") {
 			from(components["java"])
 			pom {
-				// todo
 				name.set(project.name)
 				description.set(project.description)
-				url.set("https://")
-				year.set("2021")
+				url.set("https://github.com/elex-project/dorian-gray")
 				properties.set(mapOf(
-						"myProp" to "value",
-						"prop.with.dots" to "anotherValue"
+						"year" to "2021"
 				))
 				licenses {
 					license {
-						// todo
 						name.set("BSD 3-Clause License")
-						url.set("licenseUrl")
+						url.set("https://github.com/elex-project/dorian-gray/blob/main/LICENSE")
 					}
 				}
 				developers {
@@ -93,10 +89,9 @@ publishing {
 					}
 				}
 				scm {
-					// todo
-					connection.set("scm:git:https://github.com/my-library.git")
-					developerConnection.set("scm:git:https://github.com/my-library.git")
-					url.set("https://github.com/my-library/")
+					connection.set("scm:git:https://github.com/elex-project/dorian-gray.git")
+					developerConnection.set("scm:git:https://github.com/elex-project/dorian-gray.git")
+					url.set("https://github.com/elex-project/dorian-gray")
 				}
 			}
 		}
@@ -116,7 +111,7 @@ publishing {
 		}
 		maven { //todo
 			name = "mavenGithub"
-			url = uri("https://maven.pkg.github.com/elex-project/tmpl-java-library")
+			url = uri("https://maven.pkg.github.com/elex-project/dorian-gray")
 			credentials {
 				username = project.findProperty("github.username") as String
 				password = project.findProperty("github.token") as String
@@ -126,7 +121,6 @@ publishing {
 }
 
 dependencies {
-	implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 	implementation("org.slf4j:slf4j-api:1.7.30")
 	implementation("org.jetbrains:annotations:20.1.0")
 
