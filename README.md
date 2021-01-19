@@ -1,6 +1,6 @@
-# tmpl-java-library
+# Project Dorian Gray
 
-Template for Java library project
+Image filters
 
 ---
 developed by Elex
