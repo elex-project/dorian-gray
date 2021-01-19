@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.0.0"
+version = "1.0.1"
 description = "Image filters"
 
 repositories {
@@ -124,6 +124,8 @@ dependencies {
 	implementation("org.slf4j:slf4j-api:1.7.30")
 	implementation("org.jetbrains:annotations:20.1.0")
 
+	implementation("com.elex-project:abraxas:4.0.3")
+
 	compileOnly("org.projectlombok:lombok:1.18.16")
 	annotationProcessor("org.projectlombok:lombok:1.18.16")
 	testAnnotationProcessor("org.projectlombok:lombok:1.18.16")
@@ -132,4 +134,3 @@ dependencies {
 	testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
 	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
 }
-
